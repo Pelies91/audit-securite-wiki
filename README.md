@@ -33,25 +33,18 @@ Ce premier exercice va nous permettre de comprendre la topologie réseau et ses 
      - Nombre de PCs : `38`.
      - Nombre de Switchs : `12`.
 
+Les différentes commandes à suivre seront donc effectuées depuis mon ordinateur portable, ce dernier étant directement au réseau de la salle de l'IUT via un cable ethernet. De plus, on aurait également pu essayer de construire et de découvrir la topologie du réseau de facon automatisée avec l'utilisation des 2 commandes Nmap : 
 ### **2.2. Découverte Automatisée avec Nmap**
 
-#### **Commandes exécutées :**
-1. **Ping sweep pour détecter les hôtes actifs :**
+**Ping sweep pour détecter les hôtes actifs :**
    ```bash
    sudo nmap -sn 192.168.1.0/24
    ```
-   - Résultat attendu : Liste des adresses IP actives.
 
-2. **Détection des services et versions :**
+**Détection des services et versions :**
    ```bash
    sudo nmap -sV -A 192.168.1.10
    ```
-   - Exemple de sortie :
-     ```
-     PORT     STATE SERVICE     VERSION
-     22/tcp   open  ssh         OpenSSH 7.4 (protocol 2.0)
-     80/tcp   open  http        Apache httpd 2.4.6
-     ```
 
 ---
 

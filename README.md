@@ -34,7 +34,6 @@ Ce premier exercice va nous permettre de comprendre la topologie réseau et ses 
      - Nombre de Switchs : `12`.
 
 Les différentes commandes à suivre seront donc effectuées depuis mon ordinateur portable, ce dernier étant directement au réseau de la salle de l'IUT via un cable ethernet. De plus, on aurait également pu essayer de construire et de découvrir la topologie du réseau de facon automatisée avec l'utilisation des 2 commandes Nmap : 
-### **2.2. Découverte Automatisée avec Nmap**
 
 **Ping sweep pour détecter les hôtes actifs :**
    ```bash

@@ -25,6 +25,8 @@ Une conclusion sera ensuite rédigée avec le retour des observations et expéri
 
 Ce premier exercice va nous permettre de comprendre la topologie réseau et ses points faibles potentiels. La première étape reste donc d'identifier les différents équipements réseaux de notre topologie comme les PC, les switch, les serveurs webs etc. Pour ce faire voici une maquette draw.io qui récapitule tous ces événements :
 
+![Maquette de topologie réseau](topologie.jpg)
+
 
    - Eléments relevés :
      - Réseau de la salle : `172.16.110.0/24`.

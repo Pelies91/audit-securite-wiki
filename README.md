@@ -22,20 +22,10 @@ Une conclusion sera ensuite rédigée avec le retour des observations et expéri
 
 ## **2. Analyse Fonctionnelle Simulée**
 
-### **2.1. Observation de l’Infrastructure**
 
 Ce premier exercice va nous permettre de comprendre la topologie réseau et ses points faibles potentiels. La première étape reste donc d'identifier les différents équipements réseaux de notre topologie comme les PC, les switch, les serveurs webs etc. Pour ce faire voici une maquette draw.io qui récapitule tous ces événements :
 
-#### **Étapes :**
-1. **Recensement des équipements physiques :**
-   - Routeurs, switches, points d'accès Wi-Fi, serveurs.
-   - Exemples :
-     - Switch L2 : Connecte les appareils sur le même réseau local.
-     - Routeur : Connecte différents réseaux et fournit l'accès à Internet.
-     - Pare-feu : Contrôle les flux entrants et sortants.
-     - Serveur web : Fournit des services comme HTTP ou HTTPS.
 
-2. **Cartographie logique :**
    - Sous-réseaux identifiés :
      - LAN privé : `192.168.1.0/24`.
      - DMZ publique : `192.168.2.0/24`.

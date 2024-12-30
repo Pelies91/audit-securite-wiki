@@ -1,0 +1,145 @@
+# Nmap 7.94SVN scan initiated Tue Dec 10 09:50:38 2024 as: /usr/lib/nmap/nmap -sV -O -oN scan_resultats3.txt 172.16.110.0/24
+Nmap scan report for 172.16.110.10
+Host is up (0.00091s latency).
+Not shown: 991 closed tcp ports (reset)
+PORT     STATE SERVICE     VERSION
+22/tcp   open  ssh         OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+25/tcp   open  smtp        Postfix smtpd
+80/tcp   open  http        nginx
+443/tcp  open  ssl/http    nginx
+5003/tcp open  filemaker?
+5432/tcp open  postgresql?
+8443/tcp open  ssl/http    nginx
+9090/tcp open  zeus-admin?
+9100/tcp open  jetdirect?
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port5003-TCP:V=7.94SVN%I=7%D=12/10%Time=6758554B%P=x86_64-pc-linux-gnu%
+SF:r(NULL,34,"{\"class\":\x20\"starttls\",\x20\"timenow\":\x201733842251\.
+SF:432126}\n")%r(GenericLines,34,"{\"class\":\x20\"starttls\",\x20\"timeno
+SF:w\":\x201733842256\.439323}\n")%r(GetRequest,34,"{\"class\":\x20\"start
+SF:tls\",\x20\"timenow\":\x201733842256\.444755}\n")%r(HTTPOptions,34,"{\"
+SF:class\":\x20\"starttls\",\x20\"timenow\":\x201733842256\.459415}\n")%r(
+SF:RTSPRequest,34,"{\"class\":\x20\"starttls\",\x20\"timenow\":\x201733842
+SF:256\.463101}\n")%r(RPCCheck,34,"{\"class\":\x20\"starttls\",\x20\"timen
+SF:ow\":\x201733842256\.466675}\n")%r(DNSVersionBindReqTCP,34,"{\"class\":
+SF:\x20\"starttls\",\x20\"timenow\":\x201733842261\.468751}\n")%r(DNSStatu
+SF:sRequestTCP,34,"{\"class\":\x20\"starttls\",\x20\"timenow\":\x201733842
+SF:266\.470875}\n")%r(Help,34,"{\"class\":\x20\"starttls\",\x20\"timenow\"
+SF::\x201733842271\.475366}\n")%r(SSLSessionReq,34,"{\"class\":\x20\"start
+SF:tls\",\x20\"timenow\":\x201733842271\.480968}\n")%r(TerminalServerCooki
+SF:e,33,"{\"class\":\x20\"starttls\",\x20\"timenow\":\x201733842271\.48442
+SF:}\n")%r(TLSSessionReq,34,"{\"class\":\x20\"starttls\",\x20\"timenow\":\
+SF:x201733842271\.487297}\n")%r(Kerberos,34,"{\"class\":\x20\"starttls\",\
+SF:x20\"timenow\":\x201733842271\.491024}\n")%r(SMBProgNeg,33,"{\"class\":
+SF:\x20\"starttls\",\x20\"timenow\":\x201733842271\.49366}\n")%r(X11Probe,
+SF:34,"{\"class\":\x20\"starttls\",\x20\"timenow\":\x201733842276\.495715}
+SF:\n")%r(FourOhFourRequest,34,"{\"class\":\x20\"starttls\",\x20\"timenow\
+SF:":\x201733842281\.499099}\n")%r(LPDString,34,"{\"class\":\x20\"starttls
+SF:\",\x20\"timenow\":\x201733842281\.503097}\n")%r(LDAPSearchReq,34,"{\"c
+SF:lass\":\x20\"starttls\",\x20\"timenow\":\x201733842281\.505691}\n")%r(L
+SF:DAPBindReq,34,"{\"class\":\x20\"starttls\",\x20\"timenow\":\x2017338422
+SF:81\.508045}\n")%r(SIPOptions,34,"{\"class\":\x20\"starttls\",\x20\"time
+SF:now\":\x201733842286\.511573}\n")%r(LANDesk-RC,34,"{\"class\":\x20\"sta
+SF:rttls\",\x20\"timenow\":\x201733842286\.515585}\n")%r(TerminalServer,34
+SF:,"{\"class\":\x20\"starttls\",\x20\"timenow\":\x201733842291\.518489}\n
+SF:")%r(NCP,34,"{\"class\":\x20\"starttls\",\x20\"timenow\":\x201733842296
+SF:\.523833}\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port5432-TCP:V=7.94SVN%I=7%D=12/10%Time=6758554C%P=x86_64-pc-linux-gnu%
+SF:r(SMBProgNeg,96,"E\0\0\0\x95SFATAL\0VFATAL\0C0A000\0Mprotocole\x20front
+SF:al\x2065363\.19778\x20non\x20support\xc3\xa9\x20:\x20le\x20serveur\x20s
+SF:upporte\x20de\x203\.0\x20\xc3\xa0\x203\.0\0Fpostmaster\.c\0L2195\0RProc
+SF:essStartupPacket\0\0")%r(Kerberos,96,"E\0\0\0\x95SFATAL\0VFATAL\0C0A000
+SF:\0Mprotocole\x20frontal\x2027265\.28208\x20non\x20support\xc3\xa9\x20:\
+SF:x20le\x20serveur\x20supporte\x20de\x203\.0\x20\xc3\xa0\x203\.0\0Fpostma
+SF:ster\.c\0L2195\0RProcessStartupPacket\0\0");
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.94SVN%E=4%D=12/10%OT=22%CT=1%CU=37840%PV=Y%DS=2%DC=I%G=Y%TM=675
+OS:855A9%P=x86_64-pc-linux-gnu)SEQ(SP=106%GCD=1%ISR=10A%TI=Z%II=I%TS=A)SEQ(
+OS:SP=107%GCD=1%ISR=10A%TI=Z%II=I%TS=A)OPS(O1=M5B4ST11NW7%O2=M5B4ST11NW7%O3
+OS:=M5B4NNT11NW7%O4=M5B4ST11NW7%O5=M5B4ST11NW7%O6=M5B4ST11)WIN(W1=FE88%W2=F
+OS:E88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M5B4NNSNW
+OS:7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=N)T5
+OS:(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=N)T7(R=N)U1(R=Y%DF=N%T=
+OS:40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S
+OS:)
+
+Network Distance: 2 hops
+Service Info: Host:  xivo-UC-rt110.root; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 172.16.110.53
+Host is up (0.0013s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u3 (protocol 2.0)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.94SVN%E=4%D=12/10%OT=22%CT=1%CU=34355%PV=Y%DS=2%DC=I%G=Y%TM=675
+OS:855A9%P=x86_64-pc-linux-gnu)SEQ(SP=108%GCD=1%ISR=109%TI=Z%II=I%TS=A)OPS(
+OS:O1=M5B4ST11NW7%O2=M5B4ST11NW7%O3=M5B4NNT11NW7%O4=M5B4ST11NW7%O5=M5B4ST11
+OS:NW7%O6=M5B4ST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(
+OS:R=Y%DF=Y%T=40%W=FAF0%O=M5B4NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS
+OS:%RD=0%Q=)T2(R=N)T3(R=N)T4(R=N)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0
+OS:%Q=)T6(R=N)T7(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUC
+OS:K=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 172.16.110.57
+Host is up (0.0018s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u3 (protocol 2.0)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.94SVN%E=4%D=12/10%OT=22%CT=1%CU=41641%PV=Y%DS=2%DC=I%G=Y%TM=675
+OS:855A9%P=x86_64-pc-linux-gnu)SEQ(SP=108%GCD=1%ISR=10B%TI=Z%II=I%TS=A)OPS(
+OS:O1=M5B4ST11NWA%O2=M5B4ST11NWA%O3=M5B4NNT11NWA%O4=M5B4ST11NWA%O5=M5B4ST11
+OS:NWA%O6=M5B4ST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(
+OS:R=Y%DF=Y%T=40%W=FAF0%O=M5B4NNSNWA%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS
+OS:%RD=0%Q=)T2(R=N)T3(R=N)T4(R=N)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0
+OS:%Q=)T6(R=N)T7(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUC
+OS:K=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 172.16.110.65
+Host is up (0.0014s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u3 (protocol 2.0)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.94SVN%E=4%D=12/10%OT=22%CT=1%CU=42779%PV=Y%DS=2%DC=I%G=Y%TM=675
+OS:855A9%P=x86_64-pc-linux-gnu)SEQ(SP=101%GCD=1%ISR=104%TI=Z%II=I%TS=A)SEQ(
+OS:SP=101%GCD=1%ISR=105%TI=Z%II=I%TS=A)OPS(O1=M5B4ST11NW7%O2=M5B4ST11NW7%O3
+OS:=M5B4NNT11NW7%O4=M5B4ST11NW7%O5=M5B4ST11NW7%O6=M5B4ST11)WIN(W1=FE88%W2=F
+OS:E88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M5B4NNSNW
+OS:7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=N)T5
+OS:(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=N)T7(R=N)U1(R=Y%DF=N%T=
+OS:40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S
+OS:)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 172.16.110.254
+Host is up (0.00070s latency).
+Not shown: 997 filtered tcp ports (no-response)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.4 (protocol 2.0)
+53/tcp open  domain  Unbound
+80/tcp open  http    nginx
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): FreeBSD 11.X (97%)
+OS CPE: cpe:/o:freebsd:freebsd:11.2
+Aggressive OS guesses: FreeBSD 11.2-RELEASE (97%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Dec 10 09:52:25 2024 -- 256 IP addresses (5 hosts up) scanned in 106.99 seconds

@@ -51,16 +51,6 @@ Ce premier exercice va nous permettre de comprendre la topologie réseau et ses 
      80/tcp   open  http        Apache httpd 2.4.6
      ```
 
-### **2.3. Documentation de la Topologie**
-
-- **Schéma réseau :** Utiliser des outils comme **Draw.io** ou **Visio**.
-- Exemple de topologie :
-  - LAN (192.168.1.0/24) :
-    - Routeur : 192.168.1.1.
-    - Serveur web : 192.168.1.10.
-  - DMZ (192.168.2.0/24) :
-    - Serveur public : 192.168.2.20.
-
 ---
 
 ## **3. Utilisation d’Outils d’Analyse**

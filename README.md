@@ -46,6 +46,7 @@ Les différentes commandes à suivre seront donc effectuées depuis mon ordinate
    ```
 
 Pour finir, on peut conclure que la topologie d'un réseau peut fortement influencer la sécurité. En effet, une segmentation réseau bien concue (séparation LAN/DMZ...) limite la propagation des attaques tandis qu'une mauvaise configuration expose des ressources sensibles.
+
 ---
 
 ## **3. Utilisation d’Outils d’Analyse**

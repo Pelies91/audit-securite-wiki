@@ -26,10 +26,10 @@ Une conclusion sera ensuite rédigée avec le retour des observations et expéri
 Ce premier exercice va nous permettre de comprendre la topologie réseau et ses points faibles potentiels. La première étape reste donc d'identifier les différents équipements réseaux de notre topologie comme les PC, les switch, les serveurs webs etc. Pour ce faire voici une maquette draw.io qui récapitule tous ces événements :
 
 
-   - Sous-réseaux identifiés :
-     - LAN privé : `192.168.1.0/24`.
-     - DMZ publique : `192.168.2.0/24`.
-   - Segments critiques : Serveurs de bases de données ou de fichiers.
+   - Eléments relevés :
+     - Réseau de la salle : `172.16.110.0/24`.
+     - Nombre de PCs : `38`.
+     - Nombre de Switchs : `12`.
 
 ### **2.2. Découverte Automatisée avec Nmap**
 

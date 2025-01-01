@@ -75,9 +75,16 @@ La commande effectuée réalise un scan réseau sur le sous-réseau 172.16.110.0
 
 1. **Scan rapide d’un réseau complet :**
    ```bash
-   sudo masscan -p80,443 192.168.1.0/24 --rate=1000
+   sudo masscan -p22,80,3306,8080,443 172.16.110.0/24 -oL scans_resultats4.txt
    ```
 
+   ![Résultat de la commande masscan](commande_masscan.png)
+
+La commande précédente utilise masscan afin d'effectuer un outil de scan réseau rapide, pour analyser un sous réseau (172.16.110.0) et détecter les ports ouverts sur des machines cibles. Elle comporte égalemeent certains éléments qui sont :
+
+* -p22,80,3306,8080,443 : Spécifie les ports à scanner, 22 pour SSH, 80 pour HTTPS, 3306 pour Mysql, 8080 pour HTTP alternatif, 443 pour HTTPS.
+* -oL scans_resultats4.txt : Spécifie que les résultats du scan seront sauvegardés dans un fichier au format txt.
+   
 ### **Nikto**
 
 1. **Analyse d'une application web :**

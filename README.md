@@ -63,7 +63,7 @@ En ce qui concerne nmap, cet outil permet d'analyser en profondeur les réeaux e
    sudo nmap -sV -0 172.16.110.0/24 -oN scan_resultats.txt
    ```
 
-![Résultat de la commande nmap](commande_nmap.png)
+   ![Résultat de la commande nmap](commande_nmap.png)
 
 ### **Masscan**
 

@@ -51,48 +51,34 @@ Pour finir, on peut conclure que la topologie d'un réseau peut fortement influe
 
 ## **3. Utilisation d’Outils d’Analyse**
 
-### **3.1. Nmap**
+Afin de réaliser cette partie, nous allons nous servir d'outils tels que nmap et masscan depuis une VM Kali Linux dans le but d'analyser les résultats de ces commandes pour identifier les vulnérabilités. Pour masscan, on utilisera cette commande qui permettra de détecter les ports ouverts sur des machines cibles de sorte à déceler les vulnérabilités potentielles à partir du résultat. Ce dernier est concu pour effectuer des scans réseau à une vitesse élevée, en analysant des millions d'adresses IP en un temps réduit. En termes d'avatanges, on peut considérer que masscan est bien plus rapide que nmap pour le balayage des ports sur de grandes plages IP. Cependant il fournit moins de détails et il est souvent utilisé en compléments d'outils. Pour finir sa vitesse de balayage est hautement personnalisable car elle dépend des techniques d'envoi de paquets TCP/UDP en masse, de l'ordre de millions de paquets par seconde maximum.
 
-1. **Scan complet des ports sur un hôte :**
+En ce qui concerne nmap, cet outil permet d'analyser en profondeur les réeaux et systèmes, de détecter des ports ouverts, d'identifier des services actifs, et de déterminer les versions des logiciels ou systèmes d'exploitation. On l'utilisera ici pour compléter l'analyse en profondeur des services exposés. On se servira également de l'outil nikto pour scanner les applications web sur les hôtes détectés.
+
+
+###Nmap**
+
+1. **Scan complet des ports depuis une adresse de réseau :**
    ```bash
-   sudo nmap -p- 192.168.1.10
-   ```
-2. **Scan de vulnérabilités spécifiques :**
-   ```bash
-   sudo nmap --script vuln 192.168.1.10
+   sudo nmap -sV -0 172.16.110.0/24 -oN scan_resultats.txt
    ```
 
-### **3.2. Masscan**
+![Résultat de la commande nmap](commande_nmap.png)
+
+### **Masscan**
 
 1. **Scan rapide d’un réseau complet :**
    ```bash
    sudo masscan -p80,443 192.168.1.0/24 --rate=1000
    ```
 
-### **3.3. OpenVAS**
-
-1. **Installation et configuration :**
-   ```bash
-   sudo apt install openvas
-   sudo gvm-setup
-   ```
-2. **Analyse via l’interface graphique :**
-   - URL : `https://<IP>:9392`.
-   - Créez un scan pour votre plage IP.
-
-### **3.4. Nikto**
+### Nikto**
 
 1. **Analyse d'une application web :**
    ```bash
    nikto -h http://192.168.1.10
    ```
-   - Exemple de sortie :
-     ```
-     + Server: Apache/2.4.6 (Unix)
-     + The X-XSS-Protection header is not set.
-     + The server allows TRACE requests, which could cause security issues.
-     ```
-
+   
 ---
 
 ## **4. Tests d’Intrusion**

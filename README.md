@@ -56,7 +56,7 @@ Afin de réaliser cette partie, nous allons nous servir d'outils tels que nmap e
 En ce qui concerne nmap, cet outil permet d'analyser en profondeur les réeaux et systèmes, de détecter des ports ouverts, d'identifier des services actifs, et de déterminer les versions des logiciels ou systèmes d'exploitation. On l'utilisera ici pour compléter l'analyse en profondeur des services exposés. On se servira également de l'outil nikto pour scanner les applications web sur les hôtes détectés.
 
 
-###Nmap**
+### **Nmap**
 
 1. **Scan complet des ports depuis une adresse de réseau :**
    ```bash
@@ -70,8 +70,6 @@ La commande effectuée réalise un scan réseau sur le sous-réseau 172.16.110.0
 * -sV : Active la détection de versions des services sur les ports ouverts. Cela va permettre d'identifier les logiciels et leurs versions qui seront exécutes depuis les hôtes.
 * -O : Active la fonctionnalité de détection du systèmes d'exploitations en analysant les caractéristiques des paquets envoyés et répondus par les hôtes.
 * -On scan_resultats3.txt : Enregiste les résultats du scan dans un fichier au format txt.
-
-
 
 ### **Masscan**
 

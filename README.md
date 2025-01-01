@@ -60,10 +60,17 @@ En ce qui concerne nmap, cet outil permet d'analyser en profondeur les réeaux e
 
 1. **Scan complet des ports depuis une adresse de réseau :**
    ```bash
-   sudo nmap -sV -0 172.16.110.0/24 -oN scan_resultats.txt
+   sudo nmap -sV -O 172.16.110.0/24 -oN scan_resultats3.txt
    ```
 
    ![Résultat de la commande nmap](commande_nmap.png)
+
+La commande effectuée réalise un scan réseau sur le sous-réseau 172.16.110.0/24 pour détecter les ports ouverts, identifier les versions des services associés ainsi qu'analyser le système d'exploitation des hôtes. Cette commande possède également plusieurs arguments qui sont :
+   -sV : Active la détection de versions des services sur les ports ouverts. Cela va permettre d'identifier les logiciels et leurs versions qui seront exécutes depuis les hôtes.
+   -O : Active la fonctionnalité de détection du systèmes d'exploitations en analysant les caractéristiques des paquets envoyés et répondus par les hôtes.
+   -On scan_resultats3.txt : Enregiste les résultats du scan dans un fichier au format txt.
+
+
 
 ### **Masscan**
 
@@ -72,7 +79,7 @@ En ce qui concerne nmap, cet outil permet d'analyser en profondeur les réeaux e
    sudo masscan -p80,443 192.168.1.0/24 --rate=1000
    ```
 
-### Nikto**
+### **Nikto**
 
 1. **Analyse d'une application web :**
    ```bash

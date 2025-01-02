@@ -71,6 +71,7 @@ La commande effectuée réalise un scan réseau sur le sous-réseau 172.16.110.0
 * -O : Active la fonctionnalité de détection du systèmes d'exploitations en analysant les caractéristiques des paquets envoyés et répondus par les hôtes.
 * -On scan_resultats3.txt : Enregiste les résultats du scan dans un fichier au format txt.
 
+En examinant de plus près le fichier texte [scan_resultats3.txt](scan_resultats3.txt), 
 ### **Masscan**
 
 1. **Scan rapide d’un réseau complet :**

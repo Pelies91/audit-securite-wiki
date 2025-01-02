@@ -102,7 +102,55 @@ La commande précédente utilise masscan afin d'effectuer un outil de scan rése
 * -p22,80,3306,8080,443 : Spécifie les ports à scanner, 22 pour SSH, 80 pour HTTPS, 3306 pour Mysql, 8080 pour HTTP alternatif, 443 pour HTTPS.
 * -oL scans_resultats4.txt : Spécifie que les résultats du scan seront sauvegardés dans un fichier au format txt.
 
+Le fichier texte [scans_resultats4.txt](scans_resultats4.txt) nous renvoie des informations brutes générées par masscan après un scan des ports spécifiés sur la plage d'adresse 172.16.110.1-254. On remarque que la commande parvient à identifier plusieurs hôtes avec des ports ouverts différents qui sont :
+* IP : 172.16.110.10
+  - Ports ouverts : 22, 80 et 443 
+* IP : 172.16.110.7
+  - Ports ouverts : 22, 80 et 443 
+* IP : 172.16.110.92
+  - Ports ouverts : 80, 3306 et 443 
+* IP : 172.16.110.95
+  - Ports ouverts : 80, 443 et 3306
+* IP : 172.16.110.253
+  - Ports ouverts : 22 et 80 
+* IP : 172.16.110.97
+  - Ports ouverts : 80, 3306 et 443 
+* IP : 172.16.110.254
+  - Ports ouverts : 22 et 80 
+* IP : 172.16.110.63
+  - Ports ouverts : 22
+* IP : 172.16.110.72
+  - Ports ouverts : 22 et 80 
+* IP : 172.16.110.111
+  - Ports ouverts : 22
+* IP : 172.16.110.60
+  - Ports ouverts : 22
+* IP : 172.16.110.183
+  - Ports ouverts : 22 
+* IP : 172.16.110.179
+  - Ports ouverts : 22 et 80
+* IP : 172.16.110.54
+  - Ports ouverts : 22
+* IP : 172.16.110.53
+  - Ports ouverts : 22
+* IP : 172.16.110.159
+  - Ports ouverts : 22
+* IP : 172.16.110.183
+  - Ports ouverts : 22
+* IP : 172.16.110.86
+  - Ports ouverts : 22
+* IP : 172.16.110.78
+  - Ports ouverts : 22
+* IP : 172.16.110.93
+  - Ports ouverts : 22
+* IP : 172.16.110.80
+  - Ports ouverts : 22
+* IP : 172.16.110.62
+  - Ports ouverts : 22 
+* IP : 172.16.110.182
+  - Ports ouverts : 22
 
+Enfin,
 
 ### **Nikto**
 

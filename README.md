@@ -150,7 +150,7 @@ Le fichier texte [scans_resultats4.txt](scans_resultats4.txt) nous renvoie des i
 * IP : 172.16.110.182
   - Ports ouverts : 22
 
-Enfin,
+Enfin, si l'on souhaite faire una analyse des risques par rapport à ces données, on peut tout d'abord dire que le port 22 utilisé pour SSH est présent sur presque toutes les machines. Cela peut indiquer un risque si les mots de passe sont faibles ou que les configurations par défaut sont utilisés. Les ports 80 et 443 nous indiquent également que des services web sont accessibles depuis de nombreuses machines. Il faudra par ailleurs s"assurer que les applications soient protégées contre les attaques connues. Pour finir, le port 3306 indique aussi que la base de données peut être aussi rendue accessible. Il faudra donc prendre en compte ce risque et vérifier que les accès soient bien restreints.
 
 ### **Nikto**
 
@@ -162,7 +162,7 @@ Enfin,
    ![Résultat de la commande masscan](commande_nikto.png)
    ![Résultat de la commande masscan](commande_nikto2.png)
    
-Enfin, la dernière commande utilise l'outil Nikto, un outil d'analyse de sécurité pour les serveurs web, sur une machine cible spécifique. Le paramètre -h spécifie l'hôte cible, tandis que "172.16.110.XX" représente l'adresse IP de la machine cible ou le serveur web est analysé. L'utilité de cette commande est donc d'identifier les vulnérabilités sur le serveur web et d'évaluer la conformité et la sécurité des applications hébergées depuis la machine.
+Enfin, la dernière commande utilise l'outil Nikto, un outil d'analyse de sécurité pour les serveurs web, sur une machine cible spécifique. Le paramètre -h spécifie l'hôte cible, tandis que "172.16.110.XX" représente l'adresse IP de la machine cible ou le serveur web est analysé. L'utilité de cette commande est donc d'identifier les vulnérabilités sur le serveur web et d'évaluer la conformité et la sécurité des applications hébergées depuis la machine. Les ports 80 et 443 suggèrent aussi que des services web sont accessibles. Il faudra s'assurer que les applications sont à jour et protégées contre les attaques connues. Pour ce qui est du port 3306, la base de données peut être potentiellement rendue accessible ce qui représente un risque si les accès ne sont pas restreints.
 
 ---
 

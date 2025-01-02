@@ -89,9 +89,14 @@ La commande précédente utilise masscan afin d'effectuer un outil de scan rése
 
 1. **Analyse d'une application web :**
    ```bash
-   nikto -h http://192.168.1.10
+   nikto -h http://192.168.1.XX
    ```
+
+   ![Résultat de la commande masscan](commande_nikto.png)
+   ![Résultat de la commande masscan](commande_nikto2.png)
    
+Enfin, la dernière commande utilise l'outil Nikto, un outil d'analyse de sécurité pour les serveurs web, sur une machine cible spécifique. Le paramètre -h spécifie l'hôte cible, tandis que "172.16.110.XX" représente l'adresse IP de la machine cible ou le serveur web est analysé. L'utilité de cette commande est donc d'identifier les vulnérabilités sur le serveur web et d'évaluer la conformité et la sécurité des applications hébergées depuis la machine.
+
 ---
 
 ## **4. Tests d’Intrusion**

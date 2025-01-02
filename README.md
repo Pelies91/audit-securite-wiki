@@ -71,7 +71,12 @@ La commande effectuée réalise un scan réseau sur le sous-réseau 172.16.110.0
 * -O : Active la fonctionnalité de détection du systèmes d'exploitations en analysant les caractéristiques des paquets envoyés et répondus par les hôtes.
 * -On scan_resultats3.txt : Enregiste les résultats du scan dans un fichier au format txt.
 
-En examinant de plus près le fichier texte [scan_resultats3.txt](scan_resultats3.txt), 
+En examinant de plus près le fichier texte [scan_resultats3.txt](scan_resultats3.txt) qui contient les résultats de la commande nmap exécutée, on parvient à distinguer plusieurs hôtes au sein du résau qui sont :
+
+* 172.16.110.10 : On remarque que l'hôte est actif au sein du réseau avec une latence de 0,00091s. Les ports ouverts sur ce dernier sont mutiples et on retrouve :
+     - Le port 22/tcp qui représente le port rattaché au service OpenSSH version 8.4 utilisé pour les connexions sécurisées a distance 
+     - Le port 25/tcp qui est utilisé por
+
 ### **Masscan**
 
 1. **Scan rapide d’un réseau complet :**

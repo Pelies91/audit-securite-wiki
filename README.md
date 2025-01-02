@@ -73,9 +73,20 @@ La commande effectuée réalise un scan réseau sur le sous-réseau 172.16.110.0
 
 En examinant de plus près le fichier texte [scan_resultats3.txt](scan_resultats3.txt) qui contient les résultats de la commande nmap exécutée, on parvient à distinguer plusieurs hôtes au sein du résau qui sont :
 
-* 172.16.110.10 : On remarque que l'hôte est actif au sein du réseau avec une latence de 0,00091s. Les ports ouverts sur ce dernier sont mutiples et on retrouve :
-     - Le port 22/tcp qui représente le port rattaché au service OpenSSH version 8.4 utilisé pour les connexions sécurisées a distance 
-     - Le port 25/tcp qui est utilisé por
+* 172.16.110.10 : On remarque que l'hôte de nom "xivo-UC-rt100.root" est actif au sein du réseau avec une latence de 0,00091s. Les ports ouverts sur ce dernier sont mutiples et on retrouve :
+     - Le port 22/tcp qui représente le port rattaché au service OpenSSH version 8.4 utilisé pour les connexions sécurisées a distance. 
+     - Le port 25/tcp qui est utilisé pour un service Postfix SMTPD dans l'optique d'envoie de courriels.
+     - Le port 80/tcp qui est relié au serveur web Nginx et le port 443/tcp utilisé pour des connexions chiffrés avec SSL/TLS avec le serveur Nginx (son port alternatif est également mentionné, ce dernier etant le 8443/tcp)
+     - Le port 5003/tcp rattaché à FileMaker.
+     - Le port 5432/tcp qui est lié à la base de donnée PostgreSQL.
+     - Le port 9090/tcp qui est un service inconnu et qui pourrait être un panneau d'administration.
+     - Le port 9100/tcp qui correspond à un service lié aux imprimantes réseau (JetDirect).
+
+On peut donc en déduire que la machine ciblée fonctionne sous Linux au vu des services installés.
+
+* 172.16.110.53 : On retrouve également une autre machine sous cette commande, qui possède une latence de 0,0013s et qui héberge un service OpenSSH version 9.2 du a l'utilisation du port 22/tcp.
+
+Cela revient donc à conclure que les résultats montrent que le réseau contient plusieurs hôtes éxecutant des services. On remarque également que certains services peuvent avoir des répercussions sur la latence d'un hôte, en particulier si ce dernier en héberge beaucoup. Les services non identifiées peuvent également nécessister des vérifications afin d'évaluer leurs potentiels risque de sécurité.
 
 ### **Masscan**
 
@@ -90,7 +101,9 @@ La commande précédente utilise masscan afin d'effectuer un outil de scan rése
 
 * -p22,80,3306,8080,443 : Spécifie les ports à scanner, 22 pour SSH, 80 pour HTTPS, 3306 pour Mysql, 8080 pour HTTP alternatif, 443 pour HTTPS.
 * -oL scans_resultats4.txt : Spécifie que les résultats du scan seront sauvegardés dans un fichier au format txt.
-   
+
+
+
 ### **Nikto**
 
 1. **Analyse d'une application web :**

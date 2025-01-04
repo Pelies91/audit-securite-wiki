@@ -210,10 +210,7 @@ L'entreprise TechSoft Ltd., spécialisée dans le développement d'applications 
 
 ---
 
-# Questions de Discussion
-
-# Quels sont les éléments essentiels à inclure dans une liste de vérification ?
-Une liste de vérification efficace doit inclure :
+Pour conclure, on peut lister les éléments essentiels à inclure dans une liste de vérification comme :
 - La surface d'attaque (ports, services).
 - La sécurité des applications (versions, vulnérabilités).
 - La configuration réseau (pare-feu, segmentation).
@@ -221,11 +218,7 @@ Une liste de vérification efficace doit inclure :
 - Les mises à jour et correctifs de sécurité.
 - La surveillance et la réponse aux incidents.
 
-# Comment la liste de vérification peut-elle guider un audit de sécurité ?
-- **Priorisation des actions :** Identifie les vulnérabilités critiques à corriger en premier.
-- **Structure et cohérence :** Fournit un guide clair pour couvrir tous les aspects de la sécurité.
-- **Documentation :** Permet de justifier les recommandations et de fournir des preuves d’analyse.
-- **Amélioration continue :** Peut être réutilisée et adaptée pour des audits futurs.
+De cette facon, la liste de vérification pourra guider l'audit de sécurité notamment via la priorisation des actions pour identifier les vulnérabilités critiques à corriger en premier, la structure et cohérence du guide ainsi que la documentation.
 
 ---
 

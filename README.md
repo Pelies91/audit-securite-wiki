@@ -171,15 +171,13 @@ Pour plus de résultats, le deuxième screen affiché cible lui aussi 2 adresses
 
 ## **4.Préparation à l’Audit**
 
-### Audit de Sécurité - Liste de Vérification
-
-# Scénario fictif : Audit de sécurité d’une entreprise
+### Scénario fictif : Audit de sécurité d’une entreprise
 L'entreprise **TechSoft Ltd.**, spécialisée dans le développement d'applications web, dispose de quatre serveurs accessibles depuis Internet. Cet audit vise à évaluer leur niveau de protection contre les cyberattaques. Les outils utilisés incluent **Nmap**, **Masscan**, **Nikto**, et des inspections manuelles.
 
 
-# Liste de Vérification pour l’Audit de Sécurité
+### - Liste de Vérification pour l’Audit de Sécurité
 
-# 1. Analyse de Surface d’Attaque (Reconnaissance)
+### 1. Analyse de Surface d’Attaque (Reconnaissance)
 - **Scan des ports et services :**
   - Identifier les ports ouverts (outils : Nmap, Masscan).
   - Vérifier les services actifs et leurs versions (exemple : Apache, MySQL, etc.).
@@ -187,7 +185,7 @@ L'entreprise **TechSoft Ltd.**, spécialisée dans le développement d'applicati
 - **Vérification des règles de pare-feu :**
   - Vérifier si les règles de filtrage permettent uniquement le trafic nécessaire.
 
-# 2. Sécurité des Services Web
+### 2. Sécurité des Services Web
 - **Vérification des vulnérabilités avec Nikto :**
   - Absence des headers HTTP critiques (`X-Frame-Options`, `X-Content-Type-Options`, `Strict-Transport-Security`).
   - Présence de fichiers sensibles (ex. : `/wp-config.php`, `/backup/`).
@@ -195,24 +193,24 @@ L'entreprise **TechSoft Ltd.**, spécialisée dans le développement d'applicati
 - **Validation des certificats SSL :**
   - Vérifier l’expiration et la force des certificats TLS.
 
-# 3. Gestion des Mises à Jour
+### 3. Gestion des Mises à Jour
 - **Versions des logiciels :**
   - Identifier les versions obsolètes (Apache, OpenSSL, PHP, etc.).
   - Vérifier les vulnérabilités connues (ex. : CVE-2006-3918 détectée sur Apache).
 
-# 4. Politique de Mots de Passe
+### 4. Politique de Mots de Passe
 - **Sécurité des mots de passe :**
   - Vérifier les exigences en matière de mots de passe (longueur, complexité).
   - Confirmer l’absence de mots de passe par défaut.
 
-# 5. Sécurité Réseau
+### 5. Sécurité Réseau
 - **Segmentation réseau :**
   - Vérifier si les serveurs critiques sont isolés des autres services.
   - Confirmer l’utilisation d’une DMZ pour les services publics.
 - **Méthodes HTTP autorisées :**
   - Désactiver les méthodes dangereuses (`TRACE`, `PUT`).
 
-# 6. Surveillance et Journalisation
+### 6. Surveillance et Journalisation
 - **Analyse des logs :**
   - Vérifier si les journaux système et applicatifs sont activés.
   - S’assurer que les logs sont protégés contre les modifications non autorisées.

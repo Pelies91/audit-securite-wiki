@@ -171,7 +171,7 @@ Pour plus de résultats, le deuxième screen affiché cible lui aussi 2 adresses
 
 ## **4.Préparation à l’Audit**
 
-# Audit de Sécurité - Liste de Vérification
+### Audit de Sécurité - Liste de Vérification
 
 # Scénario fictif : Audit de sécurité d’une entreprise
 L'entreprise **TechSoft Ltd.**, spécialisée dans le développement d'applications web, dispose de quatre serveurs accessibles depuis Internet. Cet audit vise à évaluer leur niveau de protection contre les cyberattaques. Les outils utilisés incluent **Nmap**, **Masscan**, **Nikto**, et des inspections manuelles.

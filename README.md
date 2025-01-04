@@ -224,19 +224,10 @@ De cette facon, la liste de vérification pourra guider l'audit de sécurité no
 
 ## **5. Tests d’Intrusion et d’Attaques**
 
-### **5.1. Résumé des vulnérabilités trouvées**
+Le principe de cet partie répose sur l'utilisation de Metasploit pour simuler des attaques contrôlées. Pour ce faire nous allons donc utiliser les commandes suivantes :
 
-- Ports inutiles ouverts (ex. : 3306 MySQL).
-- Absence de headers de sécurité (Nikto).
-- CVE critiques détectées (OpenVAS).
-
-### **5.2. Recommandations pratiques**
-
-1. Fermez les ports inutiles.
-2. Mettez à jour les versions des services.
-3. Appliquez des règles strictes au pare-feu.
-
----
+   ![Résultat de la commande metasploit1](commande_metasploit1.png)
+   ![Résultat de la commande metasploit2](commande_metasploit2.png)
 
 ## **6. Conclusion**
 

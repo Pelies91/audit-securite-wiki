@@ -226,7 +226,7 @@ De cette facon, la liste de vérification pourra guider l'audit de sécurité no
 
 Le principe de cet partie répose sur l'utilisation de Metasploit pour simuler des attaques contrôlées. Pour ce faire nous allons donc utiliser les commandes suivantes :
 
-   ![Résultat de la commande metasploit1](commande_metasploit1.png)
+   ![Résultat de la commande metasploit1](commande_metasploit.png)
    ![Résultat de la commande metasploit2](commande_metasploit2.png)
 
 ## **6. Conclusion**

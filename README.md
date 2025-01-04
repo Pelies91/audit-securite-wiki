@@ -263,11 +263,18 @@ Pour la partie pratique concernant ces exploits, voici une brève explication de
   - set LPORT [Port d'écoute de l'attaquant]
   - exploit
 
-Pour finir, si l'on souhaite fixer des contre-mesures pour chaque exploit mentionné, on pourrait par exemple effectuer une mise à jour du noyau linux pour combler la faille, resteindre les privilèges pour les utilisateurs et surveiller les logs pour monitorer les événements inhabituels. Concernant le deuxième exploit, il serait plus viable de remplacer le logiciel concerné en abandonnant 3Cdaemon pour un autre serveur FTP plus sécurisé notamment en utilisant des connexions sécurisées via le protocole SFTP et en limitant aussi les ports et accès via des ACL ou un pare feu. Enfin, la troisième exploit serait résolu en semgentant le réseau pour isoler les systèmes SCADA dans un réseau sécurisé, de renforncer la surveillance en mettant en place des solutions de détection des intrusions et en limitant l'exposition à l'interface SCADA.
+Pour finir, si l'on souhaite fixer des contre-mesures pour chaque exploit mentionné, on pourrait par exemple effectuer une mise à jour du noyau linux pour combler la faille, resteindre les privilèges pour les utilisateurs et surveiller les logs pour monitorer les événements inhabituels. Concernant le deuxième exploit, il serait plus viable de remplacer le logiciel concerné en abandonnant 3Cdaemon pour un autre serveur FTP plus sécurisé notamment en utilisant des connexions sécurisées via le protocole SFTP et en limitant aussi les ports et accès via des ACL ou un pare feu. Enfin, la troisième exploit serait résolu en semgentant le réseau pour isoler les systèmes SCADA dans un réseau sécurisé, de renforncer la surveillance en mettant en place des solutions de détection des intrusions et en limitant l'exposition à l'interface SCADA. 
+
+Toutes ces manoeuvres montrent bien que les tests d'intrusion ont leur importance surtout dans l'analyse fonctionelle. Ils permettent notamment d'identifier les failles avec des vulnérabilités réelles dans le système, une validation des mesures de sécurité avec des mécanismes de protection et une amélioration de la résilience en testant la capacité du système à résister à des attaques.
 
 ---
 
 ## **6. Conclusion**
+
+En conclusion, on peut noter que ce TP à permis de mettre en évidence l'importance et de comprendre les vulnérabilittés 
+d'un système en utilisant des outils dans le but de réaliser des tests d'intrusion et l'exploration des exploits pour mettre à l'épreuve la sécurité des systèmes. La mise en place de tests ont donc permis d'identifier des failles spécifiques mais aussi de simuler des scénarios d'attaque réalistes ce qui offre une meilleur perspective sur les risques auxquels une entreprise peut faire face.
+
+Réaliser ces exercices sont donc essentiels dans le cadre des audits de sécurité, car ils permettent de renforcer la posture de sécurité, de prioriser les actions conttre les vunérabilités et de sensibiliser les équipes techniques et non techniques sur les bonnes pratiques. 
 
 ---
 

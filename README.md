@@ -1,4 +1,4 @@
-# audit-securite-wiki
+# audit-securite-wiki 
 # Wiki d'Audit de Sécurité
 
 Bienvenue sur le wiki d'audit de sécurité. Ce document présente un guide complet pour effectuer un audit de sécurité d'une infrastructure réseau.
@@ -269,7 +269,11 @@ Toutes ces manoeuvres montrent bien que les tests d'intrusion ont leur importanc
 
 ---
 
-## **6. Conclusion**
+## **6. Simulation d’Audits et d’Attaques**
+
+---
+
+## **7. Conclusion**
 
 En conclusion, on peut noter que ce TP à permis de mettre en évidence l'importance et de comprendre les vulnérabilittés 
 d'un système en utilisant des outils dans le but de réaliser des tests d'intrusion et l'exploration des exploits pour mettre à l'épreuve la sécurité des systèmes. La mise en place de tests ont donc permis d'identifier des failles spécifiques mais aussi de simuler des scénarios d'attaque réalistes ce qui offre une meilleur perspective sur les risques auxquels une entreprise peut faire face.

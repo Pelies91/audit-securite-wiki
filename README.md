@@ -298,7 +298,7 @@ On modifira dans un second temps les paramètres contenus dans le fichier de con
 
 En résumé, le fichier possède les paramètres essentiels pour la connexion à la base de données comme db_host qui indique l'adresser du serveur ou est hébergée la base de données postgresql, db_user pour le nom d'utilisateur utilisé pour accéder à la base de donnée, db_password pour le mot de passe associé à l'utilisateur et http_port qui détermine le port d'accès à l'interface web d'odoo. Pour finir il ne restera plus qu'à accéder à l'interface web d'odoo depuis un navigateur en entrant l'url "http://192.168.56.10:8069" comme ceci :
 
-  ![Interface web Odoo](odoo%20Elies/interface_web.png) 
+  ![Interface web Odoo](odoo%20Elies/interface_web.jpg) 
 
 ---
 

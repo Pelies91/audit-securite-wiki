@@ -294,7 +294,7 @@ De cette manière, un utilisateur au nom d'odoo sera crée avec les privièges s
 
 On modifira dans un second temps les paramètres contenus dans le fichier de configuration d'Odoo, qui sont situés dans le chemin "/etc/odoo/odoo.conf" :
 
-   ![Configuration d'Odoo](commande_metasploit.png)
+   ![Configuration d'Odoo](odoo%20Elies/odoo.conf.png)
 
 ---
 

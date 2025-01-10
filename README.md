@@ -275,13 +275,26 @@ Toutes ces manoeuvres montrent bien que les tests d'intrusion ont leur importanc
 
 Dans cette partie, nous allons installer l'application odoo depuis une machine virtuelle dans le but d'auditer 1 module, en l'occurence ici la gestion des utilisateurs. Il s'agira ici de proposer des recommandations basées sur l'analyse fonctionnelle, en utilisant 2 VM, avec Odoo installé sur la vm debian et une vm kali linux utilisée pour auditer les vulnérabilités, simuler des attaques et éditer directement les fichiers du module.
 
-Chaucune des VM possèdera 2 cartes réseau à savoir
+Chacune des VM possèdera 2 cartes réseau à savoir
 
 * Une en NAT pour l'accès à Internet
 * Une en réseau privé hôte pour la communication entre VM soit
   * 192.168.56.10 pour la VM debian
   * 192.168.56.20 pour la VM kali linux
 
+La première étape consiste donc à installer l'application Odoo sur la machine debian pour qu'il soit prêt à etre audité. Il convient d'installer les paquets nécessaires au bon fonctionnement d'odoo, en particulier les paquets python3 et python3-pip qui sont indispensables. Il faudra aussi installer postgreSQL, qui fait office de base de données d'odoo pour stocker tout type de données. Une fois installé, il ne restera plus qu'a démarrer les services en s'assurant qu'ils sont bien en cours d'exécution avec les commandes "sudo systemctl start/status odoo/postgresql". 
+
+On pourra par la suite créer un utilisateur postgresql pour odoo, notamment avec la commande : 
+ * sudo -u postgres createuser -s odoo
+
+De cette manière, un utilisateur au nom d'odoo sera crée avec les privièges superuser ce qui permettra à odoo de gérer pleinement ses bases de données. Il faudra ensuite lui ajouter un mot de passe par le biai des commandes suivantes :
+ * sudo -u postgres psql
+ * ALTER USER odoo WITH PASSWORD 'odoo_password';
+ * \q
+
+On modifira dans un second temps les paramètres contenus dans le fichier de configuration d'Odoo, qui sont situés dans le chemin "/etc/odoo/odoo.conf" :
+
+   ![Configuration d'Odoo](commande_metasploit.png)
 
 ---
 

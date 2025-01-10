@@ -271,6 +271,18 @@ Toutes ces manoeuvres montrent bien que les tests d'intrusion ont leur importanc
 
 ## **6. Simulation d’Audits et d’Attaques**
 
+### 	Gestion des utilisateurs (Eliès Boughanmi)
+
+Dans cette partie, nous allons installer l'application odoo depuis une machine virtuelle dans le but d'auditer 1 module, en l'occurence ici la gestion des utilisateurs. Il s'agira ici de proposer des recommandations basées sur l'analyse fonctionnelle, en utilisant 2 VM, avec Odoo installé sur la vm debian et une vm kali linux utilisée pour auditer les vulnérabilités, simuler des attaques et éditer directement les fichiers du module.
+
+Chaucune des VM possèdera 2 cartes réseau à savoir
+
+* Une en NAT pour l'accès à Internet
+* Une en réseau privé hôte pour la communication entre VM soit
+  * 192.168.56.10 pour la VM debian
+  * 192.168.56.20 pour la VM kali linux
+
+
 ---
 
 ## **7. Conclusion**

@@ -328,7 +328,37 @@ La dernière étape est donc de rédémarrer odoo, pour être certains que les m
 
 #### C. Audit d’Odoo Depuis Kali Linux
 
+Cette troisième partie portera sur la simulation des attaques et sur l'identification des vulnérabilités potentielles d'Odoo installée sur la vm debian en se servant d'outils de test d'intrusion comme Nmap, Nikto et Hydra. L'objectif est donc d'évaluer la sécurité du module de gestion pour vérifier si les modifications sont efficaces.
 
+En premier lieu, le lancement du scan nmap va être réalisé pour identifier les services ouverts sur une machine cible. Les paramètres "-sV" et "-p" permettent respectivement d'éffectuer une détection de version des services en cours d'éxecution et du scan de l'ensemble des ports. Il ne restera en suite plus qu'a pointer l'adresse IP de la vm debian sur laquelle odoo est installé.
+
+   ![Résultat de la commande nmap](odoo%20Elies/nmap.png)
+
+En l'occurence, la commande va ici scanner tous les ports ouverts sur l'adresse IP de la vm linux. Cette dernière va d'ailleurs détecter 2 ports ouverts à savoir :
+ * 5432/tcp : Port utilisé par PostgreSQL (versions détectées : 15.5 - 15.6)
+ * 8069/tcp : Port associé au serveur Werkzeug (version 2.2.2, Python 3.11.2)
+
+Ici, le framework Werkzeug est utilisé par Odoo afin de traiter les requêtes HTTP en mode natif. C'est donc pour cette raison que nmap affiche ce framework comme service HTTP, meme si c'est Odoo qui l'utilise en l'arrière plan.
+
+Au sujet de la dexuième commande, on va utiliser le script vulscan de nmap pour analyser les vulnérabilités associées au service fonctionnant sur le port 8069 :
+
+   ![Résultat de la commande vulscan](odoo%20Elies/vulscan.png)
+
+On constate donc que le port est signalé comme "unknown", ce qui signifie qu'il n'est pas reconnu. Cela peut indiquer une configuration du serveur standard ou un manque d'informations dans la base de données de vulnérabilités.
+
+A l'égard de la troisième commande, on se servira de la commande nikto qui effectuera un scan complet des vulnérabilités Web. Cet outil open-source est notamment concu pour scanner des sitew web à la recherche de vulnérabilités connues. L'option -h permet ici de spéficier la cible avec l'IP de la vm debian et le port 8089 pour Odoo :
+
+   ![Résultat de la commande nikto](odoo%20Elies/nikto.png)
+
+On peut observer que plusieurs problèmes de configuration sont détectés à savoir :
+ * L'en-tête HTTP X-Frame-Options est absent
+ * L'en-tête HTTP X-Content-Type-Options est absent, ce qui pourrait permettre des attaques basées sur le type MIME
+
+Enfin, la dernière commande utilise hydra afin de réaliser une attaque par brute force sur la page de connexion de l'application web, en essayant plusieurs mots de passe à partir du fichier passwords.txt comme ceci :
+
+   ![Résultat de la commande hydra](odoo%20Elies/hydra.png)
+
+La commande parcours donc l'ensemble des mots de passe à l'intérieur du fichier texte et retourne le mot de passe correct "odoo_password" qui est trouvé pour le compte odoo. Hydra nous montre aussi que l'attaque a réussi, avec des informations de connexion valides.
 
 #### D. Recommandations de Sécurité pour Odoo
 

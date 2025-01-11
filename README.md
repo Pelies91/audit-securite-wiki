@@ -273,6 +273,8 @@ Toutes ces manoeuvres montrent bien que les tests d'intrusion ont leur importanc
 
 ### 	Gestion des utilisateurs (Eliès Boughanmi)
 
+#### A. Préparation de l’Environnement – Installation d’Odoo sur Debian
+
 Dans cette partie, nous allons installer l'application odoo depuis une machine virtuelle dans le but d'auditer 1 module, en l'occurence ici la gestion des utilisateurs. Il s'agira ici de proposer des recommandations basées sur l'analyse fonctionnelle, en utilisant 2 VM, avec Odoo installé sur la vm debian et une vm kali linux utilisée pour auditer les vulnérabilités, simuler des attaques et éditer directement les fichiers du module.
 
 Chacune des VM possèdera 2 cartes réseau à savoir
@@ -298,7 +300,38 @@ On modifira dans un second temps les paramètres contenus dans le fichier de con
 
 En résumé, le fichier possède les paramètres essentiels pour la connexion à la base de données comme db_host qui indique l'adresser du serveur ou est hébergée la base de données postgresql, db_user pour le nom d'utilisateur utilisé pour accéder à la base de donnée, db_password pour le mot de passe associé à l'utilisateur et http_port qui détermine le port d'accès à l'interface web d'odoo. Pour finir il ne restera plus qu'à accéder à l'interface web d'odoo depuis un navigateur en entrant l'url "http://192.168.56.10:8069" comme ceci :
 
-  ![Interface web Odoo](odoo%20Elies/interface_web.jpg) 
+   ![Interface web Odoo](odoo%20Elies/interface_web.jpg) 
+
+#### B. Édition du Module de Gestion des Utilisateurs dans Odoo
+
+Pour poursuivre, cette deuxième partie va permettre de modifier le module de gestion des utilisateurs pour renforcer la sécurité, en appliquant principalement des règles plus strictes sur les mots de passe et en restreignant les droits d'accès aux utilisateurs.
+
+En ce qui concerne la localisation du module de gestion des utilisateurs, on le situe dans le répertoire "/usr/lib/python3/dist-packages/odoo/addons/base/" car c'est l'endroit ou Odoo installe ses modules principaux. Le principal fichier qui contient la logique principale pour la création et la gestion de comptes utilisateurs est "models/res_users.py". Le but ici sera donc d'imposer une longueur minimale et des critères plus pertinents pour les mots de passe des utilisateurs. Une vérification sera par ailleurs ajoutée lors du processus de création d'un nouvel utilisateur.
+
+Pour parvenir à ces objectifs, il faut commencer par éditer le fichier python des utilisateurs nommé "res_users.py" qui gère la logique métier des utilisateurs, en le modifiant on sera capable d'imposer des contraintes sur les mots de passe pour renforcer la sécurité comme ici :
+
+   ![Config fichier res_users.py](odoo%20Elies/res_users.png)
+
+En très bref, la ligne "_inherit = 'res.users'" permet de modifier le modèle res.users existant sans pour autant le remplacer, @api.model permet quant'a lui d'indiquer que cette méthodé s'applique lors de la création d'un nouvel utilisateur. Par la suite, "raise exceptions.ValidationError" est utilisé pour lever une erreur si le mot de passe ne respecte pas les critères définis. L'utilisateur devra alors renseigner un nouveau mot de passe qui comporte au minimum 10 caractères, un chiffre, une majuscule et un caractère spécial. 
+
+Ensuite, il sera nécessaire de modifier le fichier des groupes nommé "res_groups.xml", ce dernier permettant de créer des groupes d'utilisateurs avec des permissions restreintes pour limiter les accès non autorisés aux fonctions critiques. C'est d'ailleurs ce que l'on va essayer de faire en implémentant le code suivant :
+
+   ![Config fichier res_groups.xml](odoo%20Elies/res_group.png)
+
+De cette manière, on pourra alors après coup entamer la modification du fichier "ir.model.access.csv" afin de resteindre les capacité de lecture, d'écriture et de suppression des utilisateurs non admin pour certaines fonctionnalités. L'ajout des règles de restriction d'accès sera fera comme le montre l'image ci-dessous :
+
+   ![Config fichier ir.model.access.csv](odoo%20Elies/ir.model.access.csv.png)
+
+Cette règle permettra entre autres d'avoir un identifiant unique pour règle, via le paramètre "access_res_users_limited", elle aura bien entendu un modèle affecté avec "model_res_users" et enfin le paramètre "base.group_ser" qui lui de filtrer les groupes d'utilisateurs standars. Pour finir, les permissions que donne cette règle autorisera la lecture et l'écriture de manière libre et autorisée, cependant aucune création et suppression ne sera tolerée.
+
+La dernière étape est donc de rédémarrer odoo, pour être certains que les modifications prennent effet. 
+
+#### C. Audit d’Odoo Depuis Kali Linux
+
+
+
+#### D. Recommandations de Sécurité pour Odoo
+
 
 ---
 

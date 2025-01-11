@@ -362,6 +362,13 @@ La commande parcours donc l'ensemble des mots de passe à l'intérieur du fichie
 
 #### D. Recommandations de Sécurité pour Odoo
 
+En conclusion, cette dernière partie intervient après avoir réalisé des tests d'intrusion (bruteforce, scan de vulnérabilités web et scan réseau). Elle va permettre d'émettre des recommendations visant à renforcer la sécurité d’Odoo en appliquant des contre-mesures adaptées aux vulnérabilités détectées.
+
+Pour faire simple, voici une liste des ontre-mesures qu'on pourra prendre à savoir :
+ * Anti-bruteforce : Verrouille l’utilisateur après 3 tentatives
+ * Restriction d’IP : Seules certaines IP peuvent accéder à /admin et /database/manager
+ * Sécurité des Cookies : Activation des attributs HttpOnly et Secure
+ * 2FA : Authentification forte pour les administrateurs
 
 ---
 

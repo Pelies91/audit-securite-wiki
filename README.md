@@ -1,7 +1,7 @@
 # audit-securite-wiki 
 # Wiki d'Audit de Sécurité
 
-Bienvenue sur le wiki d'audit de sécurité. Ce document présente un guide complet pour effectuer un audit de sécurité d'une infrastructure réseau.
+Bienvenue sur le wiki d'audit de sécurité. Ce document présente un guide complet pour effectuer un audit de sécurité d'une infrastructure de réseau.
 
 ---
 
